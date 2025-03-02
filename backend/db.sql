@@ -1,0 +1,31 @@
+CREATE TABLE students(
+    id INT NOT NULL AUTO_INCREMENT,
+    username VARCHAR(255) NOT NULL,
+    rollno INT NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone INT NOT NULL,
+    passwords VARCHAR(255) NOT NULL,
+    createdAt DATETIME NOT NULL DEFAULT CURRENT_TIME,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE teachers(
+    id INT NOT NULL AUTO_INCREMENT,
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone INT NOT NULL,
+    passwords VARCHAR(255) NOT NULL,
+    createdAt DATETIME NOT NULL DEFAULT CURRENT_TIME,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE providers(
+    id INT NOT NULL AUTO_INCREMENT,
+    username VARCHAR(255) NOT NULL,
+    company VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone INT NOT NULL,
+    passwords VARCHAR(255) NOT NULL,
+    createdAt DATETIME NOT NULL DEFAULT CURRENT_TIME,
+    PRIMARY KEY (id)
+);

@@ -16,18 +16,41 @@ session_set_cookie_params([
 
 session_start();
 
-if (!isset($_SESSION["last_regeneration"])) {
-    regenerateSession();
+if (isset($_SESSION["studentId"])) {
+    if (!isset($_SESSION["last_regeneration"])) {
+        loggedInRegenerateSession();
+    } else {
+        $interval = 60 * 30; //30 min
+        // if interval exceeds 30 min, reset
+        if (time() - $_SESSION["last_regeneration"] >= $interval && $_SESSION["last_regeneration"]) {
+            loggedInRegenerateSession();
+        }
+    }
 } else {
-    $interval = 60 * 30; //30 min
-    // if interval exceeds 30 min, reset
-    if (time() - $_SESSION["last_regeneration"] >= $interval && $_SESSION["last_regeneration"]) {
+    if (!isset($_SESSION["last_regeneration"])) {
         regenerateSession();
+    } else {
+        $interval = 60 * 30; //30 min
+        // if interval exceeds 30 min, reset
+        if (time() - $_SESSION["last_regeneration"] >= $interval && $_SESSION["last_regeneration"]) {
+            regenerateSession();
+        }
     }
 }
 
+
 function regenerateSession() // reset session after 30 min
 {
-    session_regenerate_id();
+    session_regenerate_id(true);
+    $_SESSION["last_regeneration"] =  time();
+}
+
+function loggedInRegenerateSession() // login session
+{
+    session_regenerate_id(true);
+    $newSessionId = session_create_id();
+    $concatSessionId = $newSessionId . "_" . $_SESSION["studentId"];
+    session_id($concatSessionId);
+
     $_SESSION["last_regeneration"] =  time();
 }

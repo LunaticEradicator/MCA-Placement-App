@@ -1,6 +1,7 @@
 <?php
 require_once "./includes/configSession.inc.php";
 require_once "./includes/signup/viewSignup.inc.php";
+require_once "./includes/login/viewLogin.inc.php";
 ?>
 
 <!DOCTYPE html>
@@ -14,10 +15,23 @@ require_once "./includes/signup/viewSignup.inc.php";
 
 <body>
 
+    <h1>Details</h1>
+    <?php
+    studentLogin();
+    ?>
     <h2>Search User</h2>
     <form action="search.php" method="POST">
         <input type="text" name="searchUsername" placeholder="Search User">
         <button>Search</button>
+    </form>
+    <h2>Login User</h2>
+    <form action="./includes/login/login.inc.php" method="POST">
+        <input type="text" name="studentName" placeholder="Enter Student Name">
+        <input type="text" name="studentPassword" placeholder="Enter Student Name">
+        <button>Login</button>
+        <?php
+        loginErrors()
+        ?>
     </form>
     <div>
         <h2>Signup Student User</h2>
@@ -53,6 +67,11 @@ require_once "./includes/signup/viewSignup.inc.php";
         <input type="text" name="deleteUsername" placeholder="Enter New Name">
         <input type="password" name="deletePwd" placeholder="Enter New Password">
         <button>Delete</button>
+    </form>
+    <h2>Delete Users</h2>
+    <h2>Logout User</h2>
+    <form action="./includes/logout/logout.inc.php" method="POST">
+        <button>Logout</button>
     </form>
 </body>
 

@@ -21,7 +21,7 @@ function isValidEmail($studentEmail)
 
 function isUsernameTaken($pdo, $studentUsername)
 {
-    if (getStudentUsers($pdo, $studentUsername)) { // function from mode file
+    if (getStudentUsers($pdo, $studentUsername)) { // function from model file
         return true; // return an error
     } else {
         return false;

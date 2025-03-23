@@ -27,7 +27,7 @@ require_once "./includes/login/teacher/viewTeacherLogin.inc.php";
     </form>
 
     <h2>Login Teacher</h2>
-    <form action="./includes/login/teacherLogin.inc.php" method="POST">
+    <form action="./includes/login/teacher/teacherLogin.php" method="POST">
         <input type="text" name="teacherName" placeholder="Enter Teacher Name">
         <input type="password" name="teacherPassword" placeholder="Enter Teacher Password">
         <button>Login</button>
@@ -38,7 +38,7 @@ require_once "./includes/login/teacher/viewTeacherLogin.inc.php";
 
     <div>
         <h2>Signup Teacher User</h2>
-        <form action="./includes/signup/teacherSignup.inc.php" method="POST">
+        <form action="./includes/signup/teacher/TeacherSignup.inc.php" method="POST">
             <?php
             signUpForm();
             ?>

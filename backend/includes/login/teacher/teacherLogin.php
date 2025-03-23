@@ -13,7 +13,7 @@ require_once("./viewTeacherLogin.inc.php");
 <body>
 
     <h2>Teacher Login</h2>
-    <form action="./includes/contrTeacherLogin.inc.php" method="post">
+    <form action="./includes/login/teacher/contrTeacherLogin.inc.php" method="post">
         <input type="text" name="teacherName" placeholder="Enter Username">
         <input type="password" name="teacherPassword" placeholder="Enter Password">
         <button type="submit">Login</button>

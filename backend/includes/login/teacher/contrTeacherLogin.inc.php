@@ -1,6 +1,6 @@
 <?php
 require_once("../dbh.inc.php"); // Database connection
-require_once("../configSession.inc.php");
+require_once("../TeacherconfigSession.inc.php");
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $teacherUsername = $_POST["teacherName"];
@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("Cannot Fetch the query: " . $e->getMessage());
     }
 } else {
-    header("Location: ../../teacherLogin.php");
+    header(".includes/login/teacher/teacherLogin.php");
     die();
 }
 ?>

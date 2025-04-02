@@ -5,6 +5,7 @@
 </head>
 <body>
     <h2>Provider Signup</h2>
+    
     <?php require_once("./includes/signup/providers/viewSignupproviders.inc.php"); displaySignupErrors(); ?>
 
     <form action="./auth/signupproviders.inc.php" method="POST">

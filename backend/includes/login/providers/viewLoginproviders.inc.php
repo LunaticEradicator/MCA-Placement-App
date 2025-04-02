@@ -1,21 +1,17 @@
 <?php
-
-function providerLoginMessage()
-{
+function providerLoginMessage() {
     if (isset($_SESSION["providerId"])) {
-        echo "Welcome: " . $_SESSION["providerUsername"] . " - " . $_SESSION["providerCompany"];
+        echo "Welcome: " . htmlspecialchars($_SESSION["providerUsername"]) . " - " . htmlspecialchars($_SESSION["providerCompany"]);
     }
 }
 
-function displayLoginErrors()
-{
+function displayLoginErrors() {
     if (isset($_SESSION["loginErrors"])) {
-        echo "<br>";
         foreach ($_SESSION["loginErrors"] as $error) {
-            echo "<p style='color: red;'>" . $error . "</p>";
+            echo "<p style='color: red;'>" . htmlspecialchars($error) . "</p>";
         }
         unset($_SESSION["loginErrors"]);
     } elseif (isset($_GET["login"]) && $_GET["login"] === "success") {
-        echo "<br><p style='color: green;'>Login Successful</p>";
+        echo "<p style='color: green;'>Login Successful</p>";
     }
 }

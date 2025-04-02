@@ -32,7 +32,7 @@ require_once "./includes/login/providers/viewLoginproviders.inc.php";
         <input type="password" name="providerPassword" placeholder="Enter Password">
         <button>Login</button>
         <?php
-        loginErrors();
+        displayLoginErrors();
         ?>
     </form>
 
@@ -46,13 +46,13 @@ require_once "./includes/login/providers/viewLoginproviders.inc.php";
         </form>
         <div>
             <?php
-            viewSignupErrors();
+            displaySignupErrors();
             ?>
         </div>
     </div>
 
     <h2>Update Provider</h2>
-    <form action="./includes/updateHandler.inc.php" method="POST">
+    <form action="./includes/updateProvider.inc.php" method="POST">
         <input type="text" name="updateUsername" placeholder="Enter New Username">
         <input type="text" name="updateCompany" placeholder="Enter New Company Name">
         <input type="password" name="updatePassword" placeholder="Enter New Password">
@@ -62,7 +62,7 @@ require_once "./includes/login/providers/viewLoginproviders.inc.php";
     </form>
 
     <h2>Delete Provider</h2>
-    <form action="./includes/deleteHandler.inc.php" method="POST">
+    <form action="./includes/deleteProvider.inc.php" method="POST">
         <input type="text" name="deleteUsername" placeholder="Enter Username">
         <input type="password" name="deletePwd" placeholder="Enter Password">
         <button>Delete</button>

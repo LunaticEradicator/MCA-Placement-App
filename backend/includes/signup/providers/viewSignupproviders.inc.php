@@ -1,4 +1,14 @@
 <?php
+function signUpForm() {
+    echo '
+    <input type="text" name="providerUsername" placeholder="Enter Username" required>
+    <input type="text" name="providerCompany" placeholder="Enter Company Name" required>
+    <input type="email" name="providerEmail" placeholder="Enter Email" required>
+    <input type="text" name="providerPhone" placeholder="Enter Phone Number" required>
+    <input type="password" name="providerPassword" placeholder="Enter Password" required>
+    <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+    ';
+}
 
 function displaySignupErrors()
 {

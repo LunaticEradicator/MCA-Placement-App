@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="first.css">
+</head>
+<body>
+
+   
+    <header class="header">
+        <div class="logo">Teacher Dashboard</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Assign Tests</a></li>
+                <li><a href="#">View Results</a></li>
+                <li><a href="#">View Placements</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   
+    <section class="assign-test">
+        <h2>Assign a New Test</h2>
+        <form id="testForm">
+            <input type="text" id="testName" placeholder="Test Name" required><br><br>
+            <input type="date" id="testDeadline" placeholder="Test Deadline" required><br><br>
+            <button type="submit">Assign Test</button>
+        </form>
+    </section>
+
+   
+    <section class="assigned-tests">
+        <h3>Assigned Tests</h3>
+        <table id="testTable">
+            <tr>
+                <th>Test Name</th>
+                <th>Deadline</th>
+            </tr>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Placement Cell. All rights reserved.</p>
+    </footer>
+
+    <script src="teacher.js"></script>
+</body>
+</html>

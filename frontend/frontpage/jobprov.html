@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Provider Dashboard</title>
+    <link rel="stylesheet" href="first.css">
+</head>
+<body>
+
+   
+    <header class="header">
+        <div class="logo">Job Provider Dashboard</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Post Job</a></li>
+                <li><a href="#">View Applications</a></li>
+                <li><a href="#">Analytics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  
+    <section class="post-job">
+        <h2>Post a New Job</h2>
+        <form id="jobForm">
+            <input type="text" id="jobTitle" placeholder="Job Title" required><br><br>
+            <input type="text" id="companyName" placeholder="Company Name" required><br><br>
+            <input type="text" id="location" placeholder="Location" required><br><br>
+            <input type="text" id="skillsRequired" placeholder="Skills Required" required><br><br>
+            <input type="number" id="salary" placeholder="Salary" required><br><br>
+            <input type="date" id="deadline" placeholder="Application Deadline" required><br><br>
+            <button type="submit">Post Job</button>
+        </form>
+    </section>
+
+    
+    <section class="job-listings">
+        <h3>Active Job Postings</h3>
+        <table id="jobTable">
+            <tr>
+                <th>Job Title</th>
+                <th>Company</th>
+                <th>Salary</th>
+                <th>Deadline</th>
+            </tr>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Placement Cell. All rights reserved.</p>
+    </footer>
+
+    <script src="jobprov.js"></script>
+</body>
+</html>

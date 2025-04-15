@@ -1,20 +1,20 @@
 <!-- query file -->
 <?php
-function providerLogin()
+function teacherLogin()
 {
-    echo '<h2>Provider Login</h2>';
-    echo '<form class="login-form" action="./includes/login/providers/loginProviders.inc.php" method="POST">';
-    echo '<input type="text" name="providerUsername" placeholder="Enter Name">';
+    echo '<h2>Teacher Login</h2>';
+    echo '<form class="login-form" action="./includes/login/teachers/loginTeacher.inc.php" method="POST">';
+    echo '<input type="text" name="teacherUsername" placeholder="Enter Name">';
     echo '<br>';
-    echo '<input type="text" name="providerPassword" placeholder="Enter Password">';
+    echo '<input type="text" name="teacherPassword" placeholder="Enter Password">';
     echo '<br>';
     echo '<button>Login</button>';
     echo '</form>';
 }
 
-function providerLoginHeader()
+function teacherLoginHeader()
 {
-    if (isset($_SESSION["providerId"]) && !empty($_SESSION['providerId'])) {
+    if (isset($_SESSION["teacherId"]) && !empty($_SESSION['teacherId'])) {
         echo '
         <style>
             .provider-header {
@@ -97,15 +97,11 @@ function providerLoginHeader()
         <div class="provider-header">
             <p class="welcome-msg">
                 Welcome,
-                <strong>' . htmlspecialchars($_SESSION["providerUsername"]) . '</strong> 
-                from 
-                <strong>' . htmlspecialchars($_SESSION["providerCompany"]) . '</strong>
+                <strong>' . htmlspecialchars($_SESSION["teacherUsername"]) . '</strong> 
             </p>
         </div>
     </div>
         ';
-    } else {
-        echo "<h2 style='text-align:center; color: red;'>Cannot Show Login Header [You are not logged in]</h2>";
     }
 }
 

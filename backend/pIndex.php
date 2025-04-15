@@ -1,13 +1,14 @@
 <?php
 require_once "./includes/configSession.inc.php";
-require_once "./includes/signup/students/viewSignup.inc.php";
-require_once "./includes/login/students/viewLogin.inc.php";
-require_once "./includes/update/students/viewUpdateStudent.inc.php";
-require_once "./includes/delete/students/viewDeleteStudent.inc.php";
-require_once "./includes/logout/students/viewLogoutStudent.inc.php";
+require_once "./includes/signup/providers/viewSignupProvider.inc.php";
+require_once "./includes/login/providers/viewLoginProviders.inc.php";
+require_once "./includes/update/providers/viewUpdateProvider.inc.php";
+require_once "./includes/delete/providers/viewDeleteProvider.inc.php";
+require_once "./includes/logout/providers/viewLogoutProvider.inc.php";
+require_once "./includes/jobs/providers/viewJobProvider.inc.php";
+require_once "./includes/status/providers/viewStatusProvider.inc.php";
 
-// require_once "./includes/dbh.inc.php";
-// require_once "./includes/jobs/students/jobStudent.inc.php"; // Search view
+
 ?>
 
 <!DOCTYPE html>
@@ -34,14 +35,11 @@ require_once "./includes/logout/students/viewLogoutStudent.inc.php";
 </style>
 
 <body>
-
-
-
     <!-- student Login -->
     <div>
         <?php
-        studentLoginHeader();
-        studentLogin();
+        providerLoginHeader();
+        providerLogin();
         loginErrors();
         ?>
     </div>
@@ -49,7 +47,7 @@ require_once "./includes/logout/students/viewLogoutStudent.inc.php";
     <!-- student Signup -->
     <div>
         <?php
-        studentSignup();
+        providerSignup();
         viewSignupErrors();
         ?>
     </div>
@@ -57,7 +55,7 @@ require_once "./includes/logout/students/viewLogoutStudent.inc.php";
     <!-- update Student -->
     <div>
         <?php
-        studentUpdate();
+        providerUpdate();
         viewUpdateErrors();
         ?>
     </div>
@@ -65,15 +63,27 @@ require_once "./includes/logout/students/viewLogoutStudent.inc.php";
     <!-- Delete -->
     <div>
         <?php
-        studentDelete();
+        providerDelete();
         ?>
     </div>
 
-    <!-- Logout -->
+    <!-- All Job Listed  -->
+    <div>
+        <?php
+        providerJobListingsView();
+        ?>
+    </div>
+    <!-- Student Status -->
 
     <div>
         <?php
-        studentLogout();
+        viewStudentJobStatus();
+        ?>
+    </div>
+    <!-- Logout -->
+    <div>
+        <?php
+        providerLogout();
         ?>
     </div>
 

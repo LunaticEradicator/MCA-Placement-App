@@ -1,8 +1,8 @@
 <?php
 
-function isInputEmpty($providerEmail, $providerPassword)
+function isInputEmpty($studentEmail, $studentPassword)
 {
-    if (empty($providerEmail) || empty($providerPassword)) {
+    if (empty($studentEmail) || empty($studentPassword)) {
         return true;
     } else {
         return false;
@@ -10,7 +10,7 @@ function isInputEmpty($providerEmail, $providerPassword)
 }
 
 //  if there is an error return true
-function isProviderUsernameWrong($result)
+function isStudentUsernameWrong($result)
 {
     if (!$result) {
         return true;
@@ -20,7 +20,7 @@ function isProviderUsernameWrong($result)
 }
 
 //  if there is an error return true
-function isProviderPasswordWrong($providerPassword, $result)
+function isStudentPasswordWrong($studentPassword, $result)
 {
     // If result is empty, no user was found
     if (!$result) {
@@ -31,7 +31,7 @@ function isProviderPasswordWrong($providerPassword, $result)
     // if (!password_verify($studentPassword, $result['password'])) {
     //     return true;  // Password doesn't match
     // }
-    if ($providerPassword !== $result['passwords']) {
+    if ($studentPassword !== $result['passwords']) {
         return true;  // Password doesn't match
     }
     return false;  // Password is correct

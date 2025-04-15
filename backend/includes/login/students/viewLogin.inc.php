@@ -1,20 +1,20 @@
 <!-- query file -->
 <?php
-function providerLogin()
+function studentLogin()
 {
-    echo '<h2>Provider Login</h2>';
-    echo '<form class="login-form" action="./includes/login/providers/loginProviders.inc.php" method="POST">';
-    echo '<input type="text" name="providerUsername" placeholder="Enter Name">';
+    echo '<h1>Login Student</h1>';
+    echo '<form class="login-form" action="./includes/login/students/login.inc.php" method="POST">';
+    echo '<input type="text" name="studentName" placeholder="Enter Name">';
     echo '<br>';
-    echo '<input type="text" name="providerPassword" placeholder="Enter Password">';
+    echo '<input type="text" name="studentPassword" placeholder="Enter Password">';
     echo '<br>';
     echo '<button>Login</button>';
     echo '</form>';
 }
 
-function providerLoginHeader()
+function studentLoginHeader()
 {
-    if (isset($_SESSION["providerId"]) && !empty($_SESSION['providerId'])) {
+    if (isset($_SESSION["studentId"]) && !empty($_SESSION['studentId'])) {
         echo '
         <style>
             .provider-header {
@@ -73,7 +73,7 @@ function providerLoginHeader()
                 color: #ffe600;
                 font-size: 20px;
                 font-weight: 700;
-               margin: 0 2px;
+                margin: 0 2px;
             }
 
             @media (max-width: 768px) {
@@ -95,20 +95,16 @@ function providerLoginHeader()
 
         <div class="header_div">
         <div class="provider-header">
-            <p class="welcome-msg">
-                Welcome,
-                <strong>' . htmlspecialchars($_SESSION["providerUsername"]) . '</strong> 
-                from 
-                <strong>' . htmlspecialchars($_SESSION["providerCompany"]) . '</strong>
-            </p>
+           <p class="welcome-msg">
+        Welcome,
+        <strong>' . htmlspecialchars($_SESSION["studentUsername"]) . '</strong> 
+        <strong>(' . htmlspecialchars($_SESSION["studentRollno"]) . ')</strong>
+    </p>
         </div>
     </div>
         ';
-    } else {
-        echo "<h2 style='text-align:center; color: red;'>Cannot Show Login Header [You are not logged in]</h2>";
     }
 }
-
 
 function loginErrors()
 {

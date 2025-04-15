@@ -1,0 +1,99 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin-right: 20px;
+}
+h2,
+p {
+  color: whitesmoke;
+}
+
+header {
+  background-color: #c4a35a;
+  color: white;
+  padding: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: -7px;
+  margin-right: -20px;
+  margin-top: -8px;
+  margin-bottom: -5px;
+}
+
+header .logo img {
+  height: 100px;
+  width: auto;
+}
+
+header .logo-text {
+  font-size: 250%;
+  font-weight: bold;
+  margin-left: 600px;
+  margin-top: 0px;
+  margin-bottom: -20px;
+  text-align: center;
+}
+
+.login-section {
+  height: 100vh;
+  text-align: center;
+  margin-top: 5px;
+  margin-left: -8px;
+  margin-right: -20px;
+  padding: 240px;
+  padding-top: 60px;
+  background-image: url("../images/jobprovimg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.login-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  border: 2px solid #358a50;
+}
+
+.login-form:hover {
+  box-shadow: 0 8px 20px #00080356; /* Enhanced shadow */
+  border: 2px solid #19582d;
+}
+
+.login-form input {
+  padding: 10px;
+  margin: 10px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.login-form button {
+  padding: 10px 20px;
+  background-color: #19582d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #c4a35a;
+}
+
+footer {
+  background-color: #c4a35a;
+  color: white;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}

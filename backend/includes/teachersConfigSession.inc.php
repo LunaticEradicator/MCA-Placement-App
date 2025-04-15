@@ -16,7 +16,7 @@ session_set_cookie_params([
 
 session_start();
 
-if (isset($_SESSION["providerId"])) {
+if (isset($_SESSION["teacherId"])) {
     if (!isset($_SESSION["last_regeneration"])) {
         loggedInRegenerateSession();
     } else {
@@ -49,7 +49,7 @@ function loggedInRegenerateSession() // login session
 {
     session_regenerate_id(true);
     $newSessionId = session_create_id();
-    $concatSessionId = $newSessionId . "_" . $_SESSION["providerId"];
+    $concatSessionId = $newSessionId . "_" . $_SESSION["teacherId"];
     session_id($concatSessionId);
 
     $_SESSION["last_regeneration"] =  time();
